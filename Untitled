@@ -13,10 +13,15 @@ DOCTYPE HTML>
   </head>
   	<body>
 
+			<!--
+			  <iframe src="http://docs.google.com/gview?url=http://evermedresearch.org/evr.pdf&embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
+			-->
 
-			<iframe src="evr.pdf#page=1" width="100%" height="800px">
+			<iframe src="http://docs.google.com/gview?url=http://evermedresearch.org/evr.pdf&embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
+			<!--
+			<iframe src="evr.pdf#page=1" width="100%" height="100%">
 				This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>
 			</iframe>
-
+		-->
 		</body>
 </html>
