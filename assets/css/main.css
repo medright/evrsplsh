@@ -18,12 +18,21 @@
 		vertical-align: baseline;
 	}
 
+	.bkg {
+		background-image: url("rounding.JPG");
+		height: 100%;
+		width: 100%;
+		
+	}
+
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
 
 	body {
 		line-height: 1;
+		background-image: url("rounding.JPG");
+		height: 100vh;
 	}
 
 	ol, ul {
