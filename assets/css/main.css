@@ -22,7 +22,7 @@
 		background-image: url("rounding.JPG");
 		height: 100%;
 		width: 100%;
-		
+		background-size: contain;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
