@@ -21,7 +21,7 @@
 	/* mainpagelayout */
 
 	.bkg {
-
+		flex: auto;
 		background-image: url("evrpi2.jpg");
 		height: 100%;
 		width: 100%;
