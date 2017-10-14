@@ -21,6 +21,7 @@
 	/* mainpagelayout */
 
 	.bkg {
+
 		background-image: url("evrpi2.jpg");
 		height: 100%;
 		width: 100%;
@@ -55,12 +56,6 @@
 		display: block;
 	}
 
-	body {
-		line-height: 1;
-		background-image: url("rounding.JPG");
-		height: 100vh;
-	}
-
 	ol, ul {
 		list-style: none;
 	}
@@ -81,6 +76,8 @@
 
 	body {
 		-webkit-text-size-adjust: none;
+		height: 100vh;
+		flex: auto;
 	}
 
 /* Box Model */
