@@ -44,6 +44,11 @@
 		background-repeat: no-repeat;
 	}
 
+	.loginlink {
+		float: right;
+		padding-right: 2vw;
+	}
+
 
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
