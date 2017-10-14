@@ -18,12 +18,33 @@
 		vertical-align: baseline;
 	}
 
+	/* mainpagelayout */
+
 	.bkg {
-		background-image: url("rounding.JPG");
+		background-image: url("evrpi2.jpg");
 		height: 100%;
 		width: 100%;
-		background-size: contain;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
+
+	.bkg1 {
+		background-image: url("evrwccpr.jpg");
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.bkg2 {
+		background-image: url("evrwckit.JPG");
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
