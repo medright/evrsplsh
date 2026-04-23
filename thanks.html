@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Thank You | evermed(research)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Thank you for requesting a Health-Connect workflow walkthrough." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="shortcut icon" type="image/jpg" href="/favicon.jpg">
+		<style>
+			:root {
+				--page-bg: #f3f7f6;
+				--surface: rgba(255, 255, 255, 0.86);
+				--ink: #102033;
+				--muted: #5a6b78;
+				--teal: #0f9b8e;
+				--navy: #0f172a;
+			}
+
+			body {
+				align-items: center;
+				background: linear-gradient(180deg, #eff5f4 0%, #f7faf9 100%);
+				color: var(--ink);
+				display: flex;
+				font-family: "Manrope", "Source Sans Pro", sans-serif;
+				justify-content: center;
+				margin: 0;
+				min-height: 100vh;
+				padding: 1.5rem;
+			}
+
+			.panel {
+				background: var(--surface);
+				border: 1px solid rgba(16, 32, 51, 0.1);
+				border-radius: 28px;
+				box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+				max-width: 42rem;
+				padding: 2.5rem;
+				text-align: center;
+				width: 100%;
+			}
+
+			.eyebrow {
+				color: var(--teal);
+				display: inline-block;
+				font-size: 0.82rem;
+				font-weight: 800;
+				letter-spacing: 0.22em;
+				margin-bottom: 1rem;
+				text-transform: uppercase;
+			}
+
+			h1 {
+				color: var(--navy);
+				font-size: clamp(2.2rem, 5vw, 3.6rem);
+				font-weight: 800;
+				letter-spacing: -0.05em;
+				line-height: 0.98;
+				margin: 0 0 1rem;
+			}
+
+			p {
+				color: var(--muted);
+				font-size: 1rem;
+				line-height: 1.8;
+				margin: 0 0 1rem;
+			}
+
+			.cta-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.9rem;
+				justify-content: center;
+				margin-top: 1.6rem;
+			}
+
+			.cta-link {
+				align-items: center;
+				border-radius: 16px;
+				display: inline-flex;
+				font-size: 0.95rem;
+				font-weight: 700;
+				gap: 0.7rem;
+				justify-content: center;
+				min-height: 3.15rem;
+				padding: 0.9rem 1.2rem;
+				text-decoration: none;
+			}
+
+			.cta-link.primary {
+				background: linear-gradient(135deg, var(--teal), #21c6b5);
+				color: #031312;
+			}
+
+			.cta-link.secondary {
+				background: rgba(15, 23, 42, 0.06);
+				border: 1px solid rgba(16, 32, 51, 0.1);
+				color: var(--navy);
+			}
+
+			@media screen and (max-width: 560px) {
+				.panel {
+					padding: 2rem 1.4rem;
+				}
+
+				.cta-row {
+					flex-direction: column;
+				}
+
+				.cta-link {
+					width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="panel">
+			<span class="eyebrow">Thank you</span>
+			<h1>Your Health-Connect demo request is in.</h1>
+			<p>We received your request and will use it to route the walkthrough around the workflow lane you selected.</p>
+			<p>If the conversation is urgent, you can still email evermed@evermedresearch.org directly.</p>
+			<div class="cta-row">
+				<a href="index.html#health-connect-inquiry" class="cta-link primary">
+					<i class="fa-solid fa-arrow-left"></i>
+					Back to Health-Connect
+				</a>
+				<a href="mailto:evermed@evermedresearch.org" class="cta-link secondary">
+					<i class="fa-solid fa-envelope"></i>
+					Email directly
+				</a>
+			</div>
+		</main>
+	</body>
+</html>
