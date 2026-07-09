@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:03.020 --> 00:00:19.150
+Health-Connect is the operating system for a hospital revenue-cycle and quality team. We're signing in as an administrator to see one of its newest modules: an AI phone-agent fleet that follows up on small unpaid claims payers would otherwise never call about.
+
+00:00:21.360 --> 00:00:34.680
+This is fleet control for the Claims Agent: whether it is running or paused, whether it is in dry-run mode so no real calls go out, how many calls are active, which claims have returned to a human, and a feed of recent runs.
+
+00:00:47.430 --> 00:01:01.540
+This is the worklist itself: the low-dollar claims sitting in the not-worth-chasing pile—the ones a busy billing team would normally write off because the recovery is not worth a person's time. You can also bulk-import more of them directly from a CSV.
+
+00:01:11.020 --> 00:01:21.540
+We'll select a couple of these pending claims and hand them directly to the agent fleet with one click—no manual dialing and no billing representative spending an afternoon on hold with a payer IVR.
+
+00:01:38.810 --> 00:01:52.100
+Once a claim is picked up, a triage pass decides whether it is worth calling and which channel to use. Then the voice agent dials the payer. In dry-run mode, that is a simulated payer line, so this is safe to demonstrate live.
+
+00:01:56.140 --> 00:02:14.590
+Here is the completed run: the full call transcript—IVR menu navigation by DTMF tones, then the live conversation with a representative—and the structured outcome the agent extracted, including the check or EFT number. This is what posts back to the worklist.
+
+00:02:28.230 --> 00:02:37.600
+Back on the worklist, the recovered-dollars stat card increases—money that was headed toward a write-off, collected without a human picking up the phone.
+
+00:02:42.870 --> 00:02:51.220
+Administrators can halt the entire fleet immediately if something looks wrong. No calls go out while paused, and nothing in flight is lost.
+
+00:03:04.760 --> 00:03:10.250
+Resuming is just as immediate. The fleet picks up where it left off.

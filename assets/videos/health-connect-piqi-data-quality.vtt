@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:03.010 --> 00:00:13.330
+Every inbound message is scored at ingest—accuracy, conformity, and availability—mapped to PIQI dimensions and rolled up per facility and use case.
+
+00:00:17.070 --> 00:00:25.530
+Records that fail the gate are held for clinical review, not rejected. Nothing is silently dropped, and the open quarantine count is always visible.
+
+00:00:29.920 --> 00:00:41.260
+HL7 version 2, C-CDA, and FHIR each get version-aware conformance rule packs—every message records exactly which rule set scored it.
+
+00:00:45.980 --> 00:00:58.650
+The executive dashboard gives leadership the whole exchange at a glance—daily quality trend, normalization lift by facility, the leaderboard, and quarantine load, all built on the same rollups.
+
+00:01:02.840 --> 00:01:12.060
+Because raw and normalized scores are kept side by side, the platform shows the measured lift normalization delivers—per facility, over time.

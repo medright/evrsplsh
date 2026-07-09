@@ -1,10 +1,25 @@
-
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 	<head>
-		<title>evermed(research)</title>
+		<title>Health-Connect Clinical Workflow Intelligence | evermed research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Health-Connect turns connected clinical data into workflow intelligence for data quality, PIQI scorecards, compliance, documentation, claims follow-up, and provider operations, with the evrConnect iOS companion app." />
+		<meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
+		<meta name="theme-color" content="#0f172a" />
+		<link rel="canonical" href="https://www.evermedresearch.org/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="evermed research" />
+		<meta property="og:title" content="Health-Connect Clinical Workflow Intelligence" />
+		<meta property="og:description" content="Turn connected clinical data into operational action across data quality, chart review, quality programs, compliance, and revenue-cycle workflows." />
+		<meta property="og:url" content="https://www.evermedresearch.org/" />
+		<meta property="og:image" content="https://www.evermedresearch.org/assets/images/health-connect-social.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Health-Connect Clinical Workflow Intelligence" />
+		<meta name="twitter:description" content="Connected clinical data transformed into data-quality, chart-review, quality, compliance, and operational workflows." />
+		<meta name="twitter:image" content="https://www.evermedresearch.org/assets/images/health-connect-social.png" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +29,38 @@
 		<link rel="shortcut icon" type="image/jpg" href="/favicon.jpg">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://www.evermedresearch.org/#organization",
+					"name": "evermed research",
+					"url": "https://www.evermedresearch.org/",
+					"email": "evermed@evermedresearch.org"
+				},
+				{
+					"@type": "SoftwareApplication",
+					"@id": "https://www.evermedresearch.org/#health-connect",
+					"name": "Health-Connect",
+					"applicationCategory": "HealthApplication",
+					"operatingSystem": "Web",
+					"description": "Clinical workflow intelligence for healthcare data quality, PIQI scorecards, chart review, quality programs, compliance readiness, documentation-sensitive workflows, and claims follow-up.",
+					"url": "https://www.evermedresearch.org/",
+					"publisher": {"@id": "https://www.evermedresearch.org/#organization"},
+					"featureList": [
+						"PIQI data-quality scorecards",
+						"FHIR clinical chart review",
+						"Clinical data normalization",
+						"Quality and care-gap workflows",
+						"Accreditation and compliance readiness",
+						"Claims follow-up automation"
+					]
+				}
+			]
+		}
+		</script>
 		<style>
 			:root {
 				--page-bg: #f3f7f6;
@@ -654,6 +701,130 @@
 				margin-top: 1rem;
 			}
 
+			.video-demo-grid {
+				display: grid;
+				gap: 1.25rem;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				margin-bottom: 2.2rem;
+			}
+
+			.video-demo-card {
+				background: rgba(255, 255, 255, 0.92);
+				border: 1px solid var(--line);
+				border-radius: 24px;
+				box-shadow: var(--card-shadow);
+				display: flex;
+				flex-direction: column;
+				overflow: hidden;
+			}
+
+			.video-demo-poster {
+				aspect-ratio: 16 / 9;
+				background: #dce9e7;
+				display: block;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.video-demo-poster img {
+				display: block;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.25s ease;
+				width: 100%;
+			}
+
+			.video-demo-card:hover .video-demo-poster img {
+				transform: scale(1.025);
+			}
+
+			.video-play {
+				align-items: center;
+				background: rgba(15, 23, 42, 0.86);
+				border: 1px solid rgba(255, 255, 255, 0.24);
+				border-radius: 50%;
+				color: #fff;
+				display: flex;
+				height: 3.3rem;
+				justify-content: center;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 3.3rem;
+			}
+
+			.video-duration {
+				background: rgba(15, 23, 42, 0.86);
+				border-radius: 8px;
+				bottom: 0.7rem;
+				color: #fff;
+				font-size: 0.72rem;
+				font-weight: 800;
+				padding: 0.35rem 0.48rem;
+				position: absolute;
+				right: 0.7rem;
+			}
+
+			.video-demo-copy {
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				padding: 1.3rem;
+			}
+
+			.video-demo-copy .video-kicker {
+				color: var(--teal-deep);
+				font-size: 0.73rem;
+				font-weight: 800;
+				letter-spacing: 0.12em;
+				margin-bottom: 0.55rem;
+				text-transform: uppercase;
+			}
+
+			.video-demo-copy h3 {
+				color: var(--navy);
+				font-size: 1.15rem;
+				font-weight: 800;
+				letter-spacing: -0.03em;
+				line-height: 1.25;
+				margin: 0 0 0.55rem;
+			}
+
+			.video-demo-copy p {
+				color: var(--muted);
+				font-size: 0.9rem;
+				line-height: 1.7;
+				margin: 0 0 1rem;
+			}
+
+			.video-demo-copy .card-link {
+				margin-top: auto;
+			}
+
+			.demo-library-row {
+				align-items: center;
+				background: linear-gradient(135deg, #0f172a, #16394a);
+				border-radius: 22px;
+				display: flex;
+				gap: 1rem;
+				justify-content: space-between;
+				margin-bottom: 2.2rem;
+				padding: 1.2rem 1.35rem;
+			}
+
+			.demo-library-row p {
+				color: rgba(255, 255, 255, 0.76);
+				font-size: 0.92rem;
+				line-height: 1.65;
+				margin: 0;
+			}
+
+			.demo-library-row .card-link {
+				color: #8ef1e3;
+				flex: 0 0 auto;
+			}
+
 			.deadline-callout {
 				background: linear-gradient(135deg, rgba(15, 155, 142, 0.18), rgba(255, 255, 255, 0.08));
 				border: 1px solid rgba(142, 241, 227, 0.24);
@@ -700,6 +871,10 @@
 					grid-template-columns: repeat(2, minmax(0, 1fr));
 				}
 
+				.video-demo-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
 				.product-card.featured {
 					grid-column: span 2;
 				}
@@ -733,6 +908,15 @@
 				.contact-grid,
 				.stat-row {
 					grid-template-columns: 1fr;
+				}
+
+				.video-demo-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.demo-library-row {
+					align-items: flex-start;
+					flex-direction: column;
 				}
 
 				.site-nav {
@@ -863,7 +1047,70 @@
 				<div class="section-header">
 					<span class="eyebrow">Demo walkthrough</span>
 					<h2>What hospital operators will see in the current Health-Connect demo.</h2>
-					<p>The current walkthrough is built to show concrete workflow behavior, not abstract AI claims. It follows the path from signal generation to operational follow-up across the core Health-Connect lanes.</p>
+					<p>Start with a short, narrated product video, then use the workflow map below to shape a live session around your team. Every public recording uses synthetic demo data and shows concrete product behavior rather than abstract AI claims.</p>
+				</div>
+
+				<div class="video-demo-grid">
+					<article class="video-demo-card">
+						<a class="video-demo-poster" href="/health-connect/demos/ai-chart-review/" aria-label="Watch AI Chart Review from FHIR Data">
+							<img src="/assets/images/demos/ai-chart-review-poster.jpg" alt="Health-Connect chart review interface with five practice-area formats and an SBAR clinical snapshot" width="1280" height="720" />
+							<span class="video-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+							<span class="video-duration">1:58</span>
+						</a>
+						<div class="video-demo-copy">
+							<span class="video-kicker">Clinical workflow</span>
+							<h3>AI chart review from FHIR data</h3>
+							<p>Generate nursing handoffs, hospitalist sign-outs, surgical briefs, ED reports, and rehab summaries from a connected patient timeline.</p>
+							<a href="/health-connect/demos/ai-chart-review/" class="card-link">Watch the chart-review demo →</a>
+						</div>
+					</article>
+
+					<article class="video-demo-card">
+						<a class="video-demo-poster" href="/health-connect/demos/clinical-data-normalization/" aria-label="Watch FHIR Clinical Data Normalization">
+							<img src="/assets/images/demos/clinical-data-normalization-poster.jpg" alt="Health-Connect normalization review queue with governed release and discard actions" width="1280" height="720" loading="lazy" />
+							<span class="video-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+							<span class="video-duration">1:36</span>
+						</a>
+						<div class="video-demo-copy">
+							<span class="video-kicker">Data quality operations</span>
+							<h3>FHIR clinical data normalization</h3>
+							<p>Dry-run rules, measure PIQI lift, quarantine uncertain records, and turn expert-reviewed mappings into reusable FHIR ConceptMaps.</p>
+							<a href="/health-connect/demos/clinical-data-normalization/" class="card-link">Watch the normalization demo →</a>
+						</div>
+					</article>
+
+					<article class="video-demo-card">
+						<a class="video-demo-poster" href="/health-connect/demos/piqi-data-quality/" aria-label="Watch PIQI Healthcare Data Quality Scorecards">
+							<img src="/assets/images/demos/piqi-data-quality-poster.jpg" alt="Health-Connect executive quality dashboard with quality trends and facility leaderboard" width="1280" height="720" loading="lazy" />
+							<span class="video-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+							<span class="video-duration">1:15</span>
+						</a>
+						<div class="video-demo-copy">
+							<span class="video-kicker">Executive visibility</span>
+							<h3>PIQI healthcare data-quality scorecards</h3>
+							<p>Follow conformance, quarantine load, facility comparisons, and raw-versus-normalized quality lift from one measurement layer.</p>
+							<a href="/health-connect/demos/piqi-data-quality/" class="card-link">Watch the PIQI demo →</a>
+						</div>
+					</article>
+
+					<article class="video-demo-card">
+						<a class="video-demo-poster" href="/health-connect/demos/claims-agent/" aria-label="Watch the AI Claims Follow-Up Agent">
+							<img src="/assets/images/demos/claims-agent-poster.jpg" alt="Health-Connect Claims Agent worklist with outstanding, recovered, needs-human, and pending claim status" width="1280" height="720" loading="lazy" />
+							<span class="video-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+							<span class="video-duration">3:13</span>
+						</a>
+						<div class="video-demo-copy">
+							<span class="video-kicker">Revenue-cycle operations</span>
+							<h3>AI Claims Agent payer follow-up</h3>
+							<p>Control a phone-agent fleet, batch low-dollar claims, inspect call transcripts and structured outcomes, and route ambiguous results back to a human.</p>
+							<a href="/health-connect/demos/claims-agent/" class="card-link">Watch the Claims Agent demo →</a>
+						</div>
+					</article>
+				</div>
+
+				<div class="demo-library-row">
+					<p>Each watch page includes captions, a searchable transcript, workflow chapters, and a capability-specific path into the live demo request.</p>
+					<a href="/health-connect/demos/" class="card-link">Explore all video demos →</a>
 				</div>
 
 				<div class="spotlight-grid">
@@ -1102,6 +1349,12 @@
 						<p class="form-helper">Working on data-quality lift, small-balance payer claims, or athenahealth connectivity? Ask for the PIQI, Claims Agent, or SMART on FHIR walkthrough and we will route the conversation accordingly.</p>
 						<form class="contact-form" id="hc-form">
 							<input type="hidden" name="source" value="evermedresearch.org/health-connect" />
+							<input type="hidden" name="landing_page" value="" />
+							<input type="hidden" name="referrer" value="" />
+							<input type="hidden" name="utm_source" value="" />
+							<input type="hidden" name="utm_medium" value="" />
+							<input type="hidden" name="utm_campaign" value="" />
+							<input type="hidden" name="utm_content" value="" />
 							<div class="form-grid">
 								<div class="form-field">
 									<label for="hc-name">Name</label>
@@ -1123,7 +1376,10 @@
 									<label for="hc-interest">Primary interest</label>
 									<select id="hc-interest" name="interest" required>
 										<option value="">Select one</option>
+										<option value="Health-Connect platform overview">Health-Connect platform overview</option>
+										<option value="AI chart review and clinical handoffs">AI chart review and clinical handoffs</option>
 										<option value="PIQI data quality and normalization lift">PIQI data quality and normalization lift</option>
+										<option value="Clinical data normalization and review">Clinical data normalization and review</option>
 										<option value="Claims Agent and revenue-cycle follow-up">Claims Agent and revenue-cycle follow-up</option>
 										<option value="DRG and documentation review">DRG and documentation review</option>
 										<option value="Quality triage and reporting workflows">Quality triage and reporting workflows</option>
@@ -1193,6 +1449,26 @@
 			const hcForm = document.getElementById("hc-form");
 			const hcStatus = document.getElementById("hc-status");
 			const googleScriptUrl = "https://script.google.com/macros/s/AKfycbwUqWWtvmMR4gr7H_GIAmy8YyemfFYHCXz6aHiC9-ImcWQaQopcLR27Ow-9mSG6KBRpgQ/exec";
+			const hcParams = new URLSearchParams(window.location.search);
+			const hcInterest = document.getElementById("hc-interest");
+			const requestedInterest = hcParams.get("interest");
+			const requestedSource = hcParams.get("source");
+			const sourceInput = hcForm.querySelector('input[name="source"]');
+
+			if (requestedInterest && Array.from(hcInterest.options).some(function (option) { return option.value === requestedInterest; })) {
+				hcInterest.value = requestedInterest;
+			}
+
+			if (requestedSource) {
+				sourceInput.value = "evermedresearch.org/" + requestedSource;
+			}
+
+			hcForm.querySelector('input[name="landing_page"]').value = window.location.pathname;
+			hcForm.querySelector('input[name="referrer"]').value = document.referrer;
+			["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach(function (key) {
+				const input = hcForm.querySelector('input[name="' + key + '"]');
+				if (input) input.value = hcParams.get(key) || "";
+			});
 
 			function setFormStatus(message, variant) {
 				hcStatus.hidden = false;
