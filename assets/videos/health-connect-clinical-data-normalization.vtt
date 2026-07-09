@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:02.510 --> 00:00:16.240
+Every EMR sends flawed data—missing genders, local codes, and OID identifiers. Health-Connect repairs these predictable defects right after parsing, with facility-scoped normalization rulesets.
+
+00:00:19.720 --> 00:00:27.950
+In the workbench, the integration engineer tests a ruleset against a real resource before publishing anything. Nothing is written during a dry run.
+
+00:00:30.360 --> 00:00:41.080
+Each rule hit shows the field before and after, and the PIQI quality score moves—so the quality lift is measured, not assumed.
+
+00:00:43.820 --> 00:00:55.760
+Records the quality gate holds land in a clinical review queue. Nothing is silently dropped. A subject-matter expert releases what is safe and discards what is not, and every decision is audited.
+
+00:00:58.380 --> 00:01:10.180
+When a mapping rule meets a local code with no ConceptMap entry, it flags it instead of guessing. The expert authors the mapping once, and every future message translates automatically.
+
+00:01:12.930 --> 00:01:23.100
+The mapping is written to the facility ConceptMap in the FHIR server and the flag resolves—local lab code to LOINC, permanently.
+
+00:01:25.270 --> 00:01:34.870
+Workbench-authored rules plus expert-curated mappings mean each facility's feed gets cleaner over time—and every downstream measure, agent, and dashboard benefits.

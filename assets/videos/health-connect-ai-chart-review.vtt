@@ -1,0 +1,16 @@
+WEBVTT
+
+00:00:03.040 --> 00:00:12.330
+Health-Connect generates practice-area-specific chart summaries directly from the FHIR record—five report formats, each tuned to its clinical audience.
+
+00:00:15.280 --> 00:00:25.910
+SBAR nursing handoff, hospitalist sign-out, surgical brief, ED provider report, and rehab progress. The clinician simply picks the format for the audience.
+
+00:00:33.470 --> 00:00:45.680
+Select the patient, choose the lookback window, and generate. The agent gathers conditions, medications, labs, and encounters from the FHIR server, then composes the report.
+
+00:01:31.920 --> 00:01:42.270
+The finished snapshot opens with demographics and active problems, followed by the practice-area sections—with full token usage and cost transparency on every run.
+
+00:01:49.450 --> 00:01:56.610
+Every handoff starts from the same complete, current picture of the patient—generated in seconds from live clinical data.

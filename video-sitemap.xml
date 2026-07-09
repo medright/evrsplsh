@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://www.evermedresearch.org/health-connect/demos/ai-chart-review/</loc>
+		<video:video>
+			<video:thumbnail_loc>https://www.evermedresearch.org/assets/images/demos/ai-chart-review-poster.jpg</video:thumbnail_loc>
+			<video:title>AI Chart Review from FHIR Data</video:title>
+			<video:description>Health-Connect generates nursing handoffs, hospitalist sign-outs, surgical briefs, ED reports, and rehab summaries from connected FHIR data.</video:description>
+			<video:content_loc>https://www.evermedresearch.org/assets/videos/health-connect-ai-chart-review.mp4</video:content_loc>
+			<video:duration>118</video:duration>
+			<video:publication_date>2026-07-07T16:00:00-04:00</video:publication_date>
+			<video:family_friendly>yes</video:family_friendly>
+		</video:video>
+	</url>
+	<url>
+		<loc>https://www.evermedresearch.org/health-connect/demos/clinical-data-normalization/</loc>
+		<video:video>
+			<video:thumbnail_loc>https://www.evermedresearch.org/assets/images/demos/clinical-data-normalization-poster.jpg</video:thumbnail_loc>
+			<video:title>FHIR Clinical Data Normalization</video:title>
+			<video:description>Health-Connect demonstrates dry-run normalization rules, PIQI lift, clinical quarantine review, and reusable FHIR ConceptMap authoring.</video:description>
+			<video:content_loc>https://www.evermedresearch.org/assets/videos/health-connect-clinical-data-normalization.mp4</video:content_loc>
+			<video:duration>96</video:duration>
+			<video:publication_date>2026-07-07T16:00:00-04:00</video:publication_date>
+			<video:family_friendly>yes</video:family_friendly>
+		</video:video>
+	</url>
+	<url>
+		<loc>https://www.evermedresearch.org/health-connect/demos/piqi-data-quality/</loc>
+		<video:video>
+			<video:thumbnail_loc>https://www.evermedresearch.org/assets/images/demos/piqi-data-quality-poster.jpg</video:thumbnail_loc>
+			<video:title>PIQI Healthcare Data Quality Scorecards</video:title>
+			<video:description>Health-Connect scores HL7v2, C-CDA, and FHIR data with PIQI dimensions and shows conformance, quarantine load, facility comparison, and normalization lift.</video:description>
+			<video:content_loc>https://www.evermedresearch.org/assets/videos/health-connect-piqi-data-quality.mp4</video:content_loc>
+			<video:duration>75</video:duration>
+			<video:publication_date>2026-07-07T16:00:00-04:00</video:publication_date>
+			<video:family_friendly>yes</video:family_friendly>
+		</video:video>
+	</url>
+	<url>
+		<loc>https://www.evermedresearch.org/health-connect/demos/claims-agent/</loc>
+		<video:video>
+			<video:thumbnail_loc>https://www.evermedresearch.org/assets/images/demos/claims-agent-poster.jpg</video:thumbnail_loc>
+			<video:title>AI Claims Follow-Up Agent</video:title>
+			<video:description>Health-Connect demonstrates controlled AI phone-agent follow-up for low-dollar payer claims with batch enqueueing, dry-run calls, transcripts, structured outcomes, and human escalation.</video:description>
+			<video:content_loc>https://www.evermedresearch.org/assets/videos/health-connect-claims-agent.mp4</video:content_loc>
+			<video:duration>193</video:duration>
+			<video:publication_date>2026-07-07T16:00:00-04:00</video:publication_date>
+			<video:family_friendly>yes</video:family_friendly>
+		</video:video>
+	</url>
+</urlset>
