@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>evermed(research)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="(evermed)research — where we've been, and where we're going: health, cannabot, haven, munibot, foodie, social-agent, and signalhealth." />
+		<meta name="theme-color" content="#000000" />
+		<link rel="shortcut icon" type="image/jpg" href="/favicon.jpg" />
+		<link rel="preload" as="image" href="images/evrpi-hero.jpg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+		<style>
+			:root {
+				--neon: #19d3ff;
+				--neon-glow: rgba(25, 211, 255, 0.55);
+				--neon-haze: rgba(25, 211, 255, 0.28);
+				--ink: #d6f3ff;
+				--dim: rgba(214, 243, 255, 0.62);
+
+				/* type — swap the family here (and in the <link> above) to change the font */
+				--font: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+				--h2: clamp(1.05rem, 2.3vw, 1.9rem);
+				--track-head: 0.02em;
+				--track-link: 0.08em;
+
+				/* geometry */
+				--inset: clamp(1.4rem, 4.5vw, 4rem); /* gap between the line and the photo's edge */
+				--wire: 2px;
+				--row: 2.2;       /* tree row height in rem (unitless so it can also drive timing) */
+				--rows: 7;        /* number of links in the tree */
+				--stub-a: 2.2rem; /* tree branch lengths alternate between these two */
+				--stub-b: 5rem;
+				--pad: 0.45rem;   /* breathing room between a headline and the line that meets it */
+				--row-a: calc(var(--h2) * 1.2 + var(--pad) * 2);
+
+				/* the trace, in order: down the left, across the bottom, up the tree */
+				--t-left: 0.5s;
+				--d-left: 1.1s;
+				--t-been: calc(var(--t-left) + var(--d-left) - 0.1s);
+				--t-across: calc(var(--t-left) + var(--d-left) + 0.4s);
+				--d-across: 1.2s;
+				--d-riser: 0s; /* phones only: the short climb to the right-hand headline */
+				--t-going: calc(var(--t-across) + var(--d-across) + var(--d-riser) - 0.05s);
+				--t-tree: calc(var(--t-going) + 0.45s);
+				--spr: 0.1s; /* seconds per rem as the line climbs the tree */
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				min-height: 100%;
+			}
+
+			body {
+				background: #000;
+				color: var(--ink);
+				font-family: var(--font);
+				-webkit-font-smoothing: antialiased;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			a:focus-visible {
+				outline: 1px solid var(--neon);
+				outline-offset: 5px;
+			}
+
+			/* ---------- stage: the photo is the whole page ---------- */
+
+			.stage {
+				isolation: isolate;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.stage::before {
+				animation: photo-in 2.4s ease-out both;
+				background: url("images/evrpi-hero.jpg") center bottom / cover no-repeat;
+				content: "";
+				inset: 0;
+				position: absolute;
+				z-index: -2;
+			}
+
+			/* darkens the bottom band (where the text lives) and a touch of the top */
+			.stage::after {
+				background:
+					linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.62) 20%, rgba(0, 0, 0, 0) 50%),
+					linear-gradient(270deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 32%),
+					linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 22%);
+				content: "";
+				inset: 0;
+				position: absolute;
+				z-index: -1;
+			}
+
+			/* ---------- the circuit ----------
+			   | line down the left edge
+			   where we've been ————————————— where we're going, with the tree rising above it
+			   └ forbes link                                              footer                */
+
+			.circuit {
+				display: grid;
+				grid-template-columns: auto minmax(1.5rem, 1fr) auto;
+				grid-template-rows: 1fr auto auto;
+				min-height: 100vh;
+				min-height: 100svh;
+				padding: 0 var(--inset) clamp(1rem, 3vh, 1.9rem);
+				position: relative;
+			}
+
+			.wire {
+				background: var(--neon);
+				box-shadow: 0 0 6px var(--neon), 0 0 16px var(--neon), 0 0 38px var(--neon-glow);
+			}
+
+			.wire-left {
+				animation: grow-y var(--d-left) var(--t-left) cubic-bezier(0.45, 0, 0.75, 0.75) both;
+				grid-area: 1 / 1 / 2 / 2;
+				justify-self: start;
+				transform-origin: top center;
+				width: var(--wire);
+			}
+
+			.wire-across {
+				align-self: center;
+				animation: grow-x var(--d-across) var(--t-across) cubic-bezier(0.3, 0.1, 0.3, 1) both;
+				grid-area: 2 / 2 / 3 / 3;
+				height: var(--wire);
+				transform-origin: left center;
+			}
+
+			.wire-riser {
+				display: none;
+			}
+
+			.mark {
+				animation: fade-in 1.6s 0.2s ease-out both;
+				color: var(--dim);
+				font-size: 0.8rem;
+				font-weight: 400;
+				left: 0;
+				letter-spacing: 0.3em;
+				margin: 0;
+				position: absolute;
+				right: 0;
+				text-align: center;
+				top: clamp(1rem, 3vh, 1.9rem);
+			}
+
+			/* ---------- headlines: the two ends of the cross line ---------- */
+
+			h2 {
+				color: var(--neon);
+				font-size: var(--h2);
+				font-weight: 400;
+				letter-spacing: var(--track-head);
+				line-height: 1.2;
+				margin: 0;
+				text-shadow:
+					0 0 6px rgba(25, 211, 255, 0.95),
+					0 0 22px var(--neon-glow),
+					0 0 64px var(--neon-haze);
+				white-space: nowrap;
+			}
+
+			#been-title {
+				animation: neon-in 1s var(--t-been) ease-out both;
+				grid-area: 2 / 1 / 3 / 2;
+				padding: var(--pad) 1rem var(--pad) 0;
+			}
+
+			#going-title {
+				animation: neon-in 1s var(--t-going) ease-out both;
+				grid-area: 2 / 3 / 3 / 4;
+				padding: var(--pad) 0 var(--pad) 1rem;
+				text-align: right;
+			}
+
+			/* ---------- shared link styling ---------- */
+
+			.tree {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.tree li {
+				align-items: center;
+				display: flex;
+				gap: 0.75rem;
+			}
+
+			.tree a {
+				font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+				font-weight: 300;
+				letter-spacing: var(--track-link);
+				text-shadow: 0 1px 10px #000, 0 0 3px #000;
+				transition: color 0.25s ease, text-shadow 0.25s ease;
+				white-space: nowrap;
+			}
+
+			.tree a:hover,
+			.tree a:focus-visible {
+				color: var(--neon);
+				text-shadow: 0 0 8px var(--neon), 0 0 24px var(--neon-glow);
+			}
+
+			.tree small {
+				color: var(--dim);
+				font-size: 0.78em;
+				margin-left: 1em;
+			}
+
+			/* ---------- left end: the forbes link hangs off the headline ---------- */
+
+			.been-tree {
+				animation: neon-in 0.9s calc(var(--t-been) + 0.35s) ease-out both;
+				grid-area: 3 / 1 / 4 / 3;
+				padding-top: 0.1rem;
+			}
+
+			.been-tree li::before {
+				border-bottom: var(--wire) solid var(--neon);
+				border-left: var(--wire) solid var(--neon);
+				content: "";
+				filter: drop-shadow(0 0 5px var(--neon));
+				flex: none;
+				height: 0.7rem;
+				margin: 0 0 0.55rem 0.35rem;
+				width: 1.1rem;
+			}
+
+			/* ---------- right end: the tree climbs out of the headline ---------- */
+
+			.going-tree {
+				align-self: end;
+				grid-area: 1 / 3 / 2 / 4;
+				justify-self: end;
+				position: relative;
+			}
+
+			/* from the headline up to the middle of the top row */
+			.wire-right {
+				animation: grow-y calc((var(--rows) - 0.5) * var(--row) * var(--spr)) var(--t-tree) linear both;
+				bottom: 0;
+				position: absolute;
+				right: 0;
+				top: calc(var(--row) * 0.5rem);
+				transform-origin: bottom center;
+				width: var(--wire);
+			}
+
+			.going-tree li {
+				/* --i counts rows up from the headline; each lights as the climbing line reaches it */
+				--at: calc(var(--t-tree) + (var(--i) + 0.5) * var(--row) * var(--spr));
+				--stub: var(--stub-a);
+				height: calc(var(--row) * 1rem);
+				justify-content: flex-end;
+			}
+
+			.going-tree li:nth-child(even) {
+				--stub: var(--stub-b);
+			}
+
+			.going-tree li::after {
+				animation: grow-x 0.4s var(--at) ease-out both;
+				background: var(--neon);
+				box-shadow: 0 0 6px var(--neon), 0 0 14px var(--neon-glow);
+				content: "";
+				flex: none;
+				height: var(--wire);
+				transform-origin: right center;
+				width: var(--stub);
+			}
+
+			.going-tree a {
+				animation: neon-in 0.7s calc(var(--at) + 0.25s) ease-out both;
+			}
+
+			/* ---------- footer ---------- */
+
+			.foot {
+				align-self: center;
+				animation: fade-in 1.6s calc(var(--t-tree) + 1.8s) ease-out both;
+				color: var(--dim);
+				display: flex;
+				flex-wrap: wrap;
+				font-size: 0.72rem;
+				gap: 0.4rem 1.5rem;
+				grid-area: 3 / 2 / 4 / 4;
+				justify-content: flex-end;
+				justify-self: end;
+				letter-spacing: 0.1em;
+				text-shadow: 0 1px 8px #000, 0 0 2px #000;
+			}
+
+			.foot a:hover,
+			.foot a:focus-visible {
+				color: var(--neon);
+			}
+
+			/* ---------- motion ---------- */
+
+			@keyframes grow-y {
+				from {
+					transform: scaleY(0);
+				}
+				to {
+					transform: scaleY(1);
+				}
+			}
+
+			@keyframes grow-x {
+				from {
+					transform: scaleX(0);
+				}
+				to {
+					transform: scaleX(1);
+				}
+			}
+
+			@keyframes neon-in {
+				from {
+					filter: blur(6px);
+					opacity: 0;
+				}
+				to {
+					filter: blur(0);
+					opacity: 1;
+				}
+			}
+
+			@keyframes fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+			@keyframes photo-in {
+				from {
+					opacity: 0;
+					transform: scale(1.04);
+				}
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				*,
+				*::before,
+				*::after {
+					animation: none !important;
+				}
+			}
+
+			/* ---------- phones ----------
+			   the two headlines can't share a row, so the cross line runs to the right edge
+			   and a short riser carries it up to "where we're going"                         */
+
+			@media (max-width: 720px) {
+				:root {
+					--stub-a: 1.2rem;
+					--stub-b: 2.8rem;
+					--d-riser: 0.3s;
+				}
+
+				.circuit {
+					grid-template-columns: auto minmax(1rem, 1fr);
+					grid-template-rows: 1fr auto 0.8rem auto auto auto;
+				}
+
+				.stage::before {
+					background-position: center top;
+					background-size: auto 76%;
+				}
+
+				.stage::after {
+					background:
+						linear-gradient(0deg, #000 0%, #000 24%, rgba(0, 0, 0, 0.72) 44%, rgba(0, 0, 0, 0) 66%),
+						linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%);
+				}
+
+				.mark {
+					font-size: 0.7rem;
+				}
+
+				.wire-left {
+					grid-area: 1 / 1 / 4 / 2;
+				}
+
+				.going-tree {
+					grid-area: 1 / 1 / 2 / 3;
+				}
+
+				#going-title {
+					grid-area: 2 / 1 / 3 / 3;
+					justify-self: end;
+				}
+
+				.wire-riser {
+					animation: grow-y var(--d-riser) calc(var(--t-across) + var(--d-across)) linear both;
+					display: block;
+					grid-area: 3 / 2 / 5 / 3;
+					justify-self: end;
+					margin-bottom: calc(var(--row-a) / 2);
+					transform-origin: bottom center;
+					width: var(--wire);
+				}
+
+				#been-title {
+					grid-area: 4 / 1 / 5 / 2;
+				}
+
+				.wire-across {
+					grid-area: 4 / 2 / 5 / 3;
+				}
+
+				.been-tree {
+					grid-area: 5 / 1 / 6 / 3;
+				}
+
+				.been-tree li {
+					align-items: flex-start;
+				}
+
+				.been-tree li::before {
+					margin-bottom: 0;
+				}
+
+				.tree small {
+					display: block;
+					margin: 0.3em 0 0;
+				}
+
+				.foot {
+					grid-area: 6 / 1 / 7 / 3;
+					font-size: 0.68rem;
+					gap: 0.4rem 1rem;
+					justify-content: center;
+					justify-self: center;
+					letter-spacing: 0.04em;
+					padding-top: 1.4rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="stage">
+			<div class="circuit">
+				<h1 class="mark">(evermed)research</h1>
+
+				<span class="wire wire-left" role="presentation"></span>
+
+				<h2 id="been-title">where we've been</h2>
+				<ul class="tree been-tree" aria-labelledby="been-title">
+					<li>
+						<a href="https://www.forbes.com/sites/johnnosta/2013/07/06/ok-glass-save-a-life-the-application-of-google-glass-in-sudden-cardiac-arrest" target="_blank" rel="noopener">cprglass on google glass<small>forbes &middot; 2013</small></a>
+					</li>
+				</ul>
+
+				<span class="wire wire-across" role="presentation"></span>
+				<span class="wire wire-riser" role="presentation"></span>
+
+				<h2 id="going-title">where we're going</h2>
+				<nav class="going-tree" aria-labelledby="going-title">
+					<span class="wire wire-right" role="presentation"></span>
+					<ul class="tree">
+						<li style="--i: 6"><a href="https://health.evermedresearch.org">health</a></li>
+						<li style="--i: 5"><a href="https://cannabot.evermedresearch.org">cannabot</a></li>
+						<li style="--i: 4"><a href="https://haven.evermedresearch.org">haven</a></li>
+						<li style="--i: 3"><a href="https://munibot.evermedresearch.org">munibot</a></li>
+						<li style="--i: 2"><a href="https://foodie.evermedresearch.org">foodie</a></li>
+						<li style="--i: 1"><a href="https://social-agent.evermedresearch.org">social-agent</a></li>
+						<li style="--i: 0"><a href="https://signalhealth.evermedresearch.org">signalhealth</a></li>
+					</ul>
+				</nav>
+
+				<footer class="foot">
+					<span>&copy; 2026 (evermed)research</span>
+					<a href="privacy.html">privacy</a>
+					<a href="mailto:medright@evermedresearch.org">contact</a>
+				</footer>
+			</div>
+		</main>
+	</body>
+</html>
