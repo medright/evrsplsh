@@ -204,7 +204,8 @@
 				gap: 0.75rem;
 			}
 
-			.tree a {
+			.tree a,
+			.tree .soon {
 				font-size: clamp(0.85rem, 1.15vw, 1.05rem);
 				font-weight: 300;
 				letter-spacing: var(--track-link);
@@ -287,7 +288,13 @@
 				width: var(--stub);
 			}
 
-			.going-tree a {
+			/* not deployed yet: same look as a link, but not clickable */
+			.tree .soon {
+				cursor: default;
+			}
+
+			.going-tree a,
+			.going-tree .soon {
 				animation: neon-in 0.7s calc(var(--at) + 0.25s) ease-out both;
 			}
 
@@ -446,7 +453,7 @@
 					margin-bottom: 0;
 				}
 
-				.tree small {
+				.been-tree small {
 					display: block;
 					margin: 0.3em 0 0;
 				}
@@ -486,7 +493,7 @@
 					<ul class="tree">
 						<li style="--i: 7"><a href="https://health.evermedresearch.org">health</a></li>
 						<li style="--i: 6"><a href="https://cannabot.evermedresearch.org">cannabot</a></li>
-						<li style="--i: 5"><a href="https://haven.evermedresearch.org">haven</a></li>
+						<li style="--i: 5"><span class="soon">haven<small>coming soon</small></span></li>
 						<li style="--i: 4"><a href="https://munibot.evermedresearch.org">munibot</a></li>
 						<li style="--i: 3"><a href="https://foodie.evermedresearch.org">foodie</a></li>
 						<li style="--i: 2"><a href="https://social-agent.evermedresearch.org">social-agent</a></li>
